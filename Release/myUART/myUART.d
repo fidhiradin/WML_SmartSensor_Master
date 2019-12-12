@@ -1,3 +1,3 @@
-myUART/myUART.o: ../myUART/myUART.c ../myUART/myUART.h
+myUART/myUART.d: ../myUART/myUART.c ../myUART/myUART.h
 
 ../myUART/myUART.h:

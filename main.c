@@ -2,7 +2,7 @@
  * main.c
  *
  *  Created on: Sep 13, 2019
- *      Author: Andi
+ *      Author: Fidhi
  */
 
 #include <stdio.h>

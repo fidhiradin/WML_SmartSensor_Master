@@ -32,60 +32,61 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 LSS += \
-SPI_Master_Sensor_UNO.lss \
+WML_SmartSensor_Master.lss \
 
 FLASH_IMAGE += \
-SPI_Master_Sensor_UNO.hex \
+WML_SmartSensor_Master.hex \
 
 EEPROM_IMAGE += \
-SPI_Master_Sensor_UNO.eep \
+WML_SmartSensor_Master.eep \
 
 SIZEDUMMY += \
 sizedummy \
 
 
 # All Target
-all: SPI_Master_Sensor_UNO.elf secondary-outputs
+all: WML_SmartSensor_Master.elf secondary-outputs
 
 # Tool invocations
-SPI_Master_Sensor_UNO.elf: $(OBJS) $(USER_OBJS)
+WML_SmartSensor_Master.elf: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: AVR C Linker'
-	avr-gcc -Wl,-Map,SPI_Master_Sensor_UNO.map -mmcu=atmega328p -o "SPI_Master_Sensor_UNO.elf" $(OBJS) $(USER_OBJS) $(LIBS)
+	avr-gcc -Wl,-Map,WML_SmartSensor_Master.map -mmcu=atmega328p -o "WML_SmartSensor_Master.elf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
-SPI_Master_Sensor_UNO.lss: SPI_Master_Sensor_UNO.elf
+WML_SmartSensor_Master.lss: WML_SmartSensor_Master.elf
 	@echo 'Invoking: AVR Create Extended Listing'
-	-avr-objdump -h -S SPI_Master_Sensor_UNO.elf  >"SPI_Master_Sensor_UNO.lss"
+	-avr-objdump -h -S WML_SmartSensor_Master.elf  >"WML_SmartSensor_Master.lss"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-SPI_Master_Sensor_UNO.hex: SPI_Master_Sensor_UNO.elf
+WML_SmartSensor_Master.hex: WML_SmartSensor_Master.elf
 	@echo 'Create Flash image (ihex format)'
-	-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex SPI_Master_Sensor_UNO.elf  "SPI_Master_Sensor_UNO.hex"
+	-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex WML_SmartSensor_Master.elf  "WML_SmartSensor_Master.hex"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-SPI_Master_Sensor_UNO.eep: SPI_Master_Sensor_UNO.elf
+WML_SmartSensor_Master.eep: WML_SmartSensor_Master.elf
 	@echo 'Create eeprom image (ihex format)'
-	-avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex SPI_Master_Sensor_UNO.elf  "SPI_Master_Sensor_UNO.eep"
+	-avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex WML_SmartSensor_Master.elf  "WML_SmartSensor_Master.eep"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-sizedummy: SPI_Master_Sensor_UNO.elf
+sizedummy: WML_SmartSensor_Master.elf
 	@echo 'Invoking: Print Size'
-	-avr-size --format=berkeley -t SPI_Master_Sensor_UNO.elf
+	-avr-size --format=berkeley -t WML_SmartSensor_Master.elf
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(FLASH_IMAGE)$(ELFS)$(OBJS)$(ASM_DEPS)$(EEPROM_IMAGE)$(S_DEPS)$(SIZEDUMMY)$(S_UPPER_DEPS)$(LSS)$(C_DEPS) SPI_Master_Sensor_UNO.elf
+	-$(RM) $(FLASH_IMAGE)$(ELFS)$(OBJS)$(ASM_DEPS)$(EEPROM_IMAGE)$(S_DEPS)$(SIZEDUMMY)$(S_UPPER_DEPS)$(LSS)$(C_DEPS) WML_SmartSensor_Master.elf
 	-@echo ' '
 
 secondary-outputs: $(LSS) $(FLASH_IMAGE) $(EEPROM_IMAGE) $(SIZEDUMMY)
 
 .PHONY: all clean dependents
+.SECONDARY:
 
 -include ../makefile.targets

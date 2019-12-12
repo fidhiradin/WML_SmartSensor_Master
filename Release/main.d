@@ -1,4 +1,4 @@
-main.o: ../main.c ../myUART/myUART.h ../mySPI/mySPI.h
+main.d: ../main.c ../myUART/myUART.h ../mySPI/mySPI.h
 
 ../myUART/myUART.h:
 
