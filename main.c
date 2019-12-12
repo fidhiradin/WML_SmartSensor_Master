@@ -23,11 +23,14 @@ uint8_t sHigh1=0, sLow1=0;
 uint8_t sHigh2=0, sLow2=0;
 uint16_t sFull0=0, sFull1=0, sFull2=0;
 
-/* variable digitalRaw	*/
+/* variable calibrate	*/
 uint8_t tHigh0=0, tLow0=0;
 uint8_t tHigh1=0, tLow1=0;
 uint8_t tHigh2=0, tLow2=0;
 uint16_t tFull0=0, tFull1=0, tFull2=0;
+
+/* variable digitalRaw	*/
+uint8_t digital;
 
 uint8_t debounce=0xFF;
 
@@ -70,6 +73,7 @@ int main(void) {
 
 		case digitalRaw:{
 			USART_PutStr("digitalRaw: ");
+			print_digitalRaw();
 			USART_PutStr("\n");
 			if(buttonPressed())
 				myState = calibrateS0;
@@ -115,6 +119,7 @@ int main(void) {
 
 		case decision:{
 			USART_PutStr("decision: ");
+			print_decision();
 			USART_PutStr("\n");
 			if(buttonPressed())
 				myState = analogRaw;
@@ -151,7 +156,9 @@ void print_analogRaw(void){
 	USART_PutNum(sHigh2); USART_PutStr("^"); USART_PutNum(sLow2); USART_PutStr("^"); USART_PutNum(sFull2);
 }
 void print_digitalRaw(void){
-
+	digital = SPI_MasterTransmit(0x0F);
+	_delay_us(500);
+	USART_PutNum(digital);
 }
 void print_calibrateS0(void){
 	/* call data	*/
@@ -207,7 +214,10 @@ void print_calibrateAuto(void){
 
 }
 void print_decision(void){
+	digital = SPI_MasterTransmit(0x10);
+	_delay_us(500);
 
+	USART_PutChar(digital);
 }
 
 uint8_t buttonPressed(void){
