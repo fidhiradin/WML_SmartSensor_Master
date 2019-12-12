@@ -212,7 +212,7 @@ Disassembly of section .text:
  186:	f6 cf       	rjmp	.-20     	; 0x174 <SPI_MasterStr+0x6>
 
 00000188 <print_analogRaw>:
- 188:	81 e0       	ldi	r24, 0x01	; 1
+ 188:	87 e0       	ldi	r24, 0x07	; 7
  18a:	0e 94 b1 00 	call	0x162	; 0x162 <SPI_MasterTransmit>
  18e:	8f ec       	ldi	r24, 0xCF	; 207
  190:	97 e0       	ldi	r25, 0x07	; 7
@@ -220,7 +220,7 @@ Disassembly of section .text:
  194:	f1 f7       	brne	.-4      	; 0x192 <print_analogRaw+0xa>
  196:	00 c0       	rjmp	.+0      	; 0x198 <print_analogRaw+0x10>
  198:	00 00       	nop
- 19a:	82 e0       	ldi	r24, 0x02	; 2
+ 19a:	88 e0       	ldi	r24, 0x08	; 8
  19c:	0e 94 b1 00 	call	0x162	; 0x162 <SPI_MasterTransmit>
  1a0:	80 93 90 01 	sts	0x0190, r24	; 0x800190 <sLow0>
  1a4:	8f ec       	ldi	r24, 0xCF	; 207
@@ -229,7 +229,7 @@ Disassembly of section .text:
  1aa:	f1 f7       	brne	.-4      	; 0x1a8 <print_analogRaw+0x20>
  1ac:	00 c0       	rjmp	.+0      	; 0x1ae <print_analogRaw+0x26>
  1ae:	00 00       	nop
- 1b0:	83 e0       	ldi	r24, 0x03	; 3
+ 1b0:	89 e0       	ldi	r24, 0x09	; 9
  1b2:	0e 94 b1 00 	call	0x162	; 0x162 <SPI_MasterTransmit>
  1b6:	80 93 91 01 	sts	0x0191, r24	; 0x800191 <sHigh0>
  1ba:	8f ec       	ldi	r24, 0xCF	; 207
@@ -238,7 +238,7 @@ Disassembly of section .text:
  1c0:	f1 f7       	brne	.-4      	; 0x1be <print_analogRaw+0x36>
  1c2:	00 c0       	rjmp	.+0      	; 0x1c4 <print_analogRaw+0x3c>
  1c4:	00 00       	nop
- 1c6:	84 e0       	ldi	r24, 0x04	; 4
+ 1c6:	8a e0       	ldi	r24, 0x0A	; 10
  1c8:	0e 94 b1 00 	call	0x162	; 0x162 <SPI_MasterTransmit>
  1cc:	80 93 8e 01 	sts	0x018E, r24	; 0x80018e <sLow1>
  1d0:	8f ec       	ldi	r24, 0xCF	; 207
@@ -247,7 +247,7 @@ Disassembly of section .text:
  1d6:	f1 f7       	brne	.-4      	; 0x1d4 <print_analogRaw+0x4c>
  1d8:	00 c0       	rjmp	.+0      	; 0x1da <print_analogRaw+0x52>
  1da:	00 00       	nop
- 1dc:	85 e0       	ldi	r24, 0x05	; 5
+ 1dc:	8b e0       	ldi	r24, 0x0B	; 11
  1de:	0e 94 b1 00 	call	0x162	; 0x162 <SPI_MasterTransmit>
  1e2:	80 93 8f 01 	sts	0x018F, r24	; 0x80018f <sHigh1>
  1e6:	8f ec       	ldi	r24, 0xCF	; 207
@@ -256,7 +256,7 @@ Disassembly of section .text:
  1ec:	f1 f7       	brne	.-4      	; 0x1ea <print_analogRaw+0x62>
  1ee:	00 c0       	rjmp	.+0      	; 0x1f0 <print_analogRaw+0x68>
  1f0:	00 00       	nop
- 1f2:	86 e0       	ldi	r24, 0x06	; 6
+ 1f2:	8c e0       	ldi	r24, 0x0C	; 12
  1f4:	0e 94 b1 00 	call	0x162	; 0x162 <SPI_MasterTransmit>
  1f8:	80 93 8c 01 	sts	0x018C, r24	; 0x80018c <sLow2>
  1fc:	8f ec       	ldi	r24, 0xCF	; 207
@@ -339,7 +339,7 @@ Disassembly of section .text:
  2e8:	0c 94 79 00 	jmp	0xf2	; 0xf2 <USART_PutNum>
 
 000002ec <print_digitalRaw>:
- 2ec:	8f e0       	ldi	r24, 0x0F	; 15
+ 2ec:	8d e0       	ldi	r24, 0x0D	; 13
  2ee:	0e 94 b1 00 	call	0x162	; 0x162 <SPI_MasterTransmit>
  2f2:	80 93 93 01 	sts	0x0193, r24	; 0x800193 <digital>
  2f6:	8f ec       	ldi	r24, 0xCF	; 207
@@ -353,7 +353,7 @@ Disassembly of section .text:
  308:	0c 94 79 00 	jmp	0xf2	; 0xf2 <USART_PutNum>
 
 0000030c <print_calibrateS0>:
- 30c:	87 e0       	ldi	r24, 0x07	; 7
+ 30c:	81 e0       	ldi	r24, 0x01	; 1
  30e:	0e 94 b1 00 	call	0x162	; 0x162 <SPI_MasterTransmit>
  312:	8f ec       	ldi	r24, 0xCF	; 207
  314:	97 e0       	ldi	r25, 0x07	; 7
@@ -361,7 +361,7 @@ Disassembly of section .text:
  318:	f1 f7       	brne	.-4      	; 0x316 <print_calibrateS0+0xa>
  31a:	00 c0       	rjmp	.+0      	; 0x31c <print_calibrateS0+0x10>
  31c:	00 00       	nop
- 31e:	88 e0       	ldi	r24, 0x08	; 8
+ 31e:	82 e0       	ldi	r24, 0x02	; 2
  320:	0e 94 b1 00 	call	0x162	; 0x162 <SPI_MasterTransmit>
  324:	80 93 84 01 	sts	0x0184, r24	; 0x800184 <tLow0>
  328:	8f ec       	ldi	r24, 0xCF	; 207
@@ -400,7 +400,7 @@ Disassembly of section .text:
  384:	0c 94 79 00 	jmp	0xf2	; 0xf2 <USART_PutNum>
 
 00000388 <print_calibrateS1>:
- 388:	89 e0       	ldi	r24, 0x09	; 9
+ 388:	83 e0       	ldi	r24, 0x03	; 3
  38a:	0e 94 b1 00 	call	0x162	; 0x162 <SPI_MasterTransmit>
  38e:	8f ec       	ldi	r24, 0xCF	; 207
  390:	97 e0       	ldi	r25, 0x07	; 7
@@ -408,7 +408,7 @@ Disassembly of section .text:
  394:	f1 f7       	brne	.-4      	; 0x392 <print_calibrateS1+0xa>
  396:	00 c0       	rjmp	.+0      	; 0x398 <print_calibrateS1+0x10>
  398:	00 00       	nop
- 39a:	8a e0       	ldi	r24, 0x0A	; 10
+ 39a:	84 e0       	ldi	r24, 0x04	; 4
  39c:	0e 94 b1 00 	call	0x162	; 0x162 <SPI_MasterTransmit>
  3a0:	80 93 82 01 	sts	0x0182, r24	; 0x800182 <tLow1>
  3a4:	8f ec       	ldi	r24, 0xCF	; 207
@@ -447,7 +447,7 @@ Disassembly of section .text:
  400:	0c 94 79 00 	jmp	0xf2	; 0xf2 <USART_PutNum>
 
 00000404 <print_calibrateS2>:
- 404:	8b e0       	ldi	r24, 0x0B	; 11
+ 404:	85 e0       	ldi	r24, 0x05	; 5
  406:	0e 94 b1 00 	call	0x162	; 0x162 <SPI_MasterTransmit>
  40a:	8f ec       	ldi	r24, 0xCF	; 207
  40c:	97 e0       	ldi	r25, 0x07	; 7
@@ -455,7 +455,7 @@ Disassembly of section .text:
  410:	f1 f7       	brne	.-4      	; 0x40e <print_calibrateS2+0xa>
  412:	00 c0       	rjmp	.+0      	; 0x414 <print_calibrateS2+0x10>
  414:	00 00       	nop
- 416:	8c e0       	ldi	r24, 0x0C	; 12
+ 416:	86 e0       	ldi	r24, 0x06	; 6
  418:	0e 94 b1 00 	call	0x162	; 0x162 <SPI_MasterTransmit>
  41c:	80 93 80 01 	sts	0x0180, r24	; 0x800180 <tLow2>
  420:	8f ec       	ldi	r24, 0xCF	; 207
@@ -500,7 +500,7 @@ Disassembly of section .text:
  482:	08 95       	ret
 
 00000484 <print_decision>:
- 484:	80 e1       	ldi	r24, 0x10	; 16
+ 484:	8f e0       	ldi	r24, 0x0F	; 15
  486:	0e 94 b1 00 	call	0x162	; 0x162 <SPI_MasterTransmit>
  48a:	80 93 93 01 	sts	0x0193, r24	; 0x800193 <digital>
  48e:	8f ec       	ldi	r24, 0xCF	; 207

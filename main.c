@@ -129,17 +129,17 @@ int main(void) {
 }
 
 void print_analogRaw(void){
-	SPI_MasterTransmit(0x01);
+	SPI_MasterTransmit(0x07);
 	_delay_us(500);
-	sLow0 = SPI_MasterTransmit(0x02);
+	sLow0 = SPI_MasterTransmit(0x08);
 	_delay_us(500);
-	sHigh0 = SPI_MasterTransmit(0x03);
+	sHigh0 = SPI_MasterTransmit(0x09);
 	_delay_us(500);
-	sLow1 = SPI_MasterTransmit(0x04);
+	sLow1 = SPI_MasterTransmit(0x0A);
 	_delay_us(500);
-	sHigh1 = SPI_MasterTransmit(0x05);
+	sHigh1 = SPI_MasterTransmit(0x0B);
 	_delay_us(500);
-	sLow2 = SPI_MasterTransmit(0x06);
+	sLow2 = SPI_MasterTransmit(0x0C);
 	_delay_us(500);
 	sHigh2 = SPI_MasterTransmit(0x00);
 	_delay_us(500);
@@ -156,15 +156,15 @@ void print_analogRaw(void){
 	USART_PutNum(sHigh2); USART_PutStr("^"); USART_PutNum(sLow2); USART_PutStr("^"); USART_PutNum(sFull2);
 }
 void print_digitalRaw(void){
-	digital = SPI_MasterTransmit(0x0F);
+	digital = SPI_MasterTransmit(0x0D);
 	_delay_us(500);
 	USART_PutNum(digital);
 }
 void print_calibrateS0(void){
 	/* call data	*/
-	SPI_MasterTransmit(0x07);
+	SPI_MasterTransmit(0x01);
 	_delay_us(500);
-	tLow0 = SPI_MasterTransmit(0x08);
+	tLow0 = SPI_MasterTransmit(0x02);
 	_delay_us(500);
 	tHigh0 = SPI_MasterTransmit(0x00);
 	_delay_us(500);
@@ -178,9 +178,9 @@ void print_calibrateS0(void){
 }
 void print_calibrateS1(void){
 	/* call data	*/
-	SPI_MasterTransmit(0x09);
+	SPI_MasterTransmit(0x03);
 	_delay_us(500);
-	tLow1 = SPI_MasterTransmit(0x0A);
+	tLow1 = SPI_MasterTransmit(0x04);
 	_delay_us(500);
 	tHigh1 = SPI_MasterTransmit(0x00);
 	_delay_us(500);
@@ -194,9 +194,9 @@ void print_calibrateS1(void){
 }
 void print_calibrateS2(void){
 	/* call data	*/
-	SPI_MasterTransmit(0x0B);
+	SPI_MasterTransmit(0x05);
 	_delay_us(500);
-	tLow2 = SPI_MasterTransmit(0x0C);
+	tLow2 = SPI_MasterTransmit(0x06);
 	_delay_us(500);
 	tHigh2 = SPI_MasterTransmit(0x00);
 	_delay_us(500);
@@ -214,7 +214,7 @@ void print_calibrateAuto(void){
 
 }
 void print_decision(void){
-	digital = SPI_MasterTransmit(0x10);
+	digital = SPI_MasterTransmit(0x0F);
 	_delay_us(500);
 
 	USART_PutChar(digital);
